@@ -15,12 +15,15 @@ $ npm install isplainobject
 ## API
 
 ```js
-import isObject from 'isplainobject';
+import isPlainObject from 'isplainobject';
 
-isObject({});
+isPlainObject({});
 // => true
 
-isObject([]);
+isPlainObject(Object.create(null));
+// => true
+
+isPlainObject(new Function());
 // => false
 
 ```
