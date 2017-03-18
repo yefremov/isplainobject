@@ -1,17 +1,17 @@
 
 /**
- * Expose `isObject`.
+ * Expose `isPlainObject`.
  */
 
-module.exports = isObject;
+module.exports = isPlainObject;
 
 /**
- * Test whether `V` is a plain object.
+ * Test whether `value` is a plain object.
  *
- * @param {*} V
+ * @param {*} value
  * @returns {boolean}
  */
 
-function isObject(V) {
-  return Object === V.constructor;
+function isPlainObject(value) {
+  return Object.getPrototypeOf(value) === null || Object === value.constructor;
 }
